@@ -1,0 +1,2 @@
+phing-composer-security-checker
+===============================
