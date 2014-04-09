@@ -1,0 +1,23 @@
+{
+    "name": "notfloran/phing-composer-security-checker",
+    "description": "Use Sensio Security Advisories Checker",
+    "homepage": "https://github.com/notFloran/phing-composer-security-checker",
+    "license": "MIT",
+    "keywords": ["composer", "security", "phing"],
+    "authors": [
+        {
+            "name": "Floran Brutel",
+            "email": "contact@floran.fr"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "sensiolabs/security-checker": "~1.3"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
