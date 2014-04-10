@@ -15,7 +15,7 @@ class PhingTask extends Task
     public function main()
     {
         $checker = new SecurityChecker();
-        $alerts = $checker->check($this->file, 'json');
+        $alerts = json_decode($checker->check($this->file, 'json'));
 
         if(empty($alerts)) {
             $this->log("Great!");
