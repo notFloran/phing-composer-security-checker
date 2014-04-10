@@ -12,7 +12,7 @@ class PhingTask extends Task
 {
     protected $file = "composer.lock";
 
-    public function main($transport = null)
+    public function main()
     {
         $checker = new SecurityChecker();
         $alerts = $checker->check($this->file, 'json');
