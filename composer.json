@@ -1,6 +1,6 @@
 {
     "name": "notfloran/phing-composer-security-checker",
-    "description": "Use Sensio Security Advisories Checker",
+    "description": "Phing task that use Sensio Security Advisories Checker to checks if your application uses dependencies with known security vulnerabilities.",
     "homepage": "https://github.com/notFloran/phing-composer-security-checker",
     "license": "MIT",
     "keywords": ["composer", "security", "phing"],
