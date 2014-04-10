@@ -10,7 +10,19 @@ use BuildException;
 
 class PhingTask extends Task
 {
+    /**
+     * The composer.lock file to check
+     *
+     * @var string
+     */
     protected $file = "composer.lock";
+
+    /**
+     * If true, an exception is throw
+     *
+     * @var boolean
+     */
+    protected $checkreturn = true;
 
     public function main()
     {
@@ -23,10 +35,19 @@ class PhingTask extends Task
             return;
         }
 
-        throw new BuildException('Security errors');
+        if($this->checkreturn) {
+            throw new BuildException('Security errors');
+        }
+
+        $this->log("Caution !");
+        $this->log("The checker detected package(s) that have known* vulnerabilities in your project. We recommend you to check the related security advisories and upgrade these dependencies.");
     }
 
     public function setFile($file) {
         $this->file = $file;
+    }
+
+    public function setCheckreturn($checkreturn) {
+        $this->checkreturn = $checkreturn;
     }
 }
