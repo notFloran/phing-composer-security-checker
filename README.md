@@ -1,7 +1,7 @@
 phing-composer-security-checker
 ===============================
 
-A Phing task for Sensio Security Advisories Checker.
+A Phing task that use Sensio Security Advisories Checker to checks if your application uses dependencies with known security vulnerabilities.
 
 Installation
 ------------
