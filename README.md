@@ -21,22 +21,38 @@ Example
 
 Let Phing know about the Security Checker task:
 
+```xml
     <taskdef name="security-checker" classname="notFloran\SecurityChecker\PhingTask" />
+```
 
 Then :
 
+```xml
     <security-checker />
-
+```
+    
 Or :
 
+```xml
     <security-checker file="/var/www/symfony/composer.lock" />
+```
+
+With all attributes :
+
+
+```xml
+    <security-checker file="/var/www/symfony/composer.lock"  haltOnError="false" format="text" outputProperty="alerts" />
+    <echo msg="Alerts : ${alerts} ..." />
+```
 
 
 Attributes :
 ------------
 
 * **file** : path to the composer.lock file (default: composer.lock)
-* **checkreturn** : indicate if an exception is thrown or not (default: true)
+* **haltOnError** : indicate if an exception is thrown or not when vulnerabilities are detected (default: true)
+* **format** : format of the list of vulnerabilities (json or text) (default: text)
+* **outputProperty** : property name to set with output value
 
 License
 -------
