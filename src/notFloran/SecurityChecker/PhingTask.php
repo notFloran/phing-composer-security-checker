@@ -27,20 +27,14 @@ class PhingTask extends Task
     public function main()
     {
         $checker = new SecurityChecker();
-        $alerts = json_decode($checker->check($this->file, 'json'));
+        $alerts = json_decode($checker->check($this->file, 'json'), true);
 
         if(empty($alerts)) {
-            $this->log("Great!");
-            $this->log("The checker did not detected known* vulnerabilities in your project dependencies.");
+            $this->log("Great! The checker did not detected known* vulnerabilities in your project dependencies.");
             return;
         }
 
-        if($this->checkreturn) {
-            throw new BuildException('Security errors');
-        }
-
-        $this->log("Caution !");
-        $this->log("The checker detected package(s) that have known* vulnerabilities in your project. We recommend you to check the related security advisories and upgrade these dependencies.");
+        $this->logError("Caution ! The checker detected package(s) that have known* vulnerabilities in your project. We recommend you to check the related security advisories and upgrade these dependencies.");
     }
 
     public function setFile($file) {
@@ -49,5 +43,14 @@ class PhingTask extends Task
 
     public function setCheckreturn($checkreturn) {
         $this->checkreturn = $checkreturn;
+    }
+
+    protected function logError($message, $location = NULL)
+    {
+        if ($this->checkreturn) {
+            throw new BuildException($message, $location);
+        } else {
+            $this->log($message, Project::MSG_ERR);
+        }
     }
 }
