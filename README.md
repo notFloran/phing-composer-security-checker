@@ -35,8 +35,8 @@ Or :
 Attributes :
 ------------
 
-* file: path to the composer.lock file (default: composer.lock)
-* checkReturn : indicate if an exception is thrown or not (default: true)
+* **file** : path to the composer.lock file (default: composer.lock)
+* **checkreturn** : indicate if an exception is thrown or not (default: true)
 
 License
 -------
