@@ -74,8 +74,8 @@ class PhingTask extends Task
      *
      * @param string $file
      */
-    public function setFile($file) {
-        $this->file = $file;
+    public function setFile($value) {
+        $this->file = $value;
     }
 
     /**
@@ -83,9 +83,9 @@ class PhingTask extends Task
      *
      * @param boolean $value
      */
-    public function setHaltonerror($value)
+    public function setHaltOnError($value)
     {
-        $this->haltonerror = $value;
+        $this->haltOnError = $value;
     }
 
     /**
@@ -93,8 +93,8 @@ class PhingTask extends Task
      *
      * @param string $format
      */
-    public function setFormat($format) {
-        $this->format = $format;
+    public function setFormat($value) {
+        $this->format = $value;
     }
 
     /**
@@ -104,9 +104,9 @@ class PhingTask extends Task
      *
      * @return self
      */
-    public function setOutputProperty($outputProperty)
+    public function setOutputProperty($value)
     {
-        $this->outputProperty = $outputProperty;
+        $this->outputProperty = $value;
 
         return $this;
     }
