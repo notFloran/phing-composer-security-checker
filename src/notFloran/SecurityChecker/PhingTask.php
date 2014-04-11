@@ -55,7 +55,7 @@ class PhingTask extends Task
             throw new BuildException('Exception with SecurityChecker : ' . $e->getMessage());
         }
 
-        if(empty($alerts)) {
+        if(!$checker->getLastVulnerabilityCount()) {
             $this->log("Great! The checker did not detected known* vulnerabilities in your project dependencies.");
             return;
         }
