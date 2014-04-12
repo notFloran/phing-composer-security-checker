@@ -11,7 +11,7 @@ The preferred way of installation is through Composer. Add `notfloran/phing-comp
 ```javascript
 {
     "require": {
-        "notfloran/phing-composer-security-checker": "dev-master"
+        "notfloran/phing-composer-security-checker": "~1.0"
     }
 }
 ```
