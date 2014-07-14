@@ -3,6 +3,7 @@ phing-composer-security-checker
 
 [![Packagist](http://img.shields.io/packagist/v/notfloran/phing-composer-security-checker.svg)](https://packagist.org/packages/notfloran/phing-composer-security-checker)
 [![Packagist](http://img.shields.io/packagist/dt/notfloran/phing-composer-security-checker.svg)](https://packagist.org/packages/notfloran/phing-composer-security-checker)
+
 A Phing task that use Sensio Security Advisories Checker to checks if your application uses dependencies with known security vulnerabilities.
 
 Installation
